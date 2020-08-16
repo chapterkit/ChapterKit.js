@@ -1,0 +1,39 @@
+{
+  "name": "chapterkit",
+  "version": "0.0.1",
+  "description": "A toolkit for creating videos",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "npm run clean && npm run frontend:prod",
+    "clean": "run-script-os",
+    "clean:default": "rm -rf dist 2>/dev/null; rm -rf gui 2>/dev/null; rm -rf build 2>/dev/null; ",
+    "clean:windows": "if exist dist rd /S /Q dist & if exist build rd /S /Q build & if exist gui rd /S /Q gui",
+    "dev": "parcel serve src/index.html",
+    "frontend:dev": "parcel build src/index.html --public-url . -d gui",
+    "frontend:prod": "parcel build src/index.html --public-url . --no-source-maps -d gui",
+    "init": "npm install",
+    "start": "npm run frontend:dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chapterkit/ChapterKit.js.git"
+  },
+  "keywords": [
+    "chapterkit",
+    "react",
+    "python",
+    "javascript"
+  ],
+  "author": "Justin Mitchel",
+  "homepage": "https://chapterkit.com",
+  "dependencies": {
+    "react": "16.12.0",
+    "react-dom": "16.12.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "1.12.4",
+    "run-script-os": "1.0.7",
+    "sass": "1.25.0",
+    "typescript": "^3.7.5"
+  }
+}
